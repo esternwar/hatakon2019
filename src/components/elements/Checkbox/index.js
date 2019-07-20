@@ -1,14 +1,8 @@
 import React, { PureComponent } from "react";
-import { Checkbox } from "@material-ui/core";
 
 class StyledCheckbox extends PureComponent {
   handleChange = event => {
-    let { onChange, disabled, checked } = this.props;
-
-    if (disabled) {
-      event.preventDefault();
-      return;
-    }
+    let { onChange, checked } = this.props;
 
     if (onChange) {
       onChange(!checked, event.ctrlKey);
@@ -20,8 +14,7 @@ class StyledCheckbox extends PureComponent {
     return (
       <div className={"fgfg"} onClick={this.handleChange}>
         <div className={"fg"}>
-          {label && <div className={"fgf"}>{label}</div>}{" "}
-          {<Checkbox checked={checked} />}
+          <span>{label}</span> <input type={"checkbox"} value={checked} />
         </div>
       </div>
     );

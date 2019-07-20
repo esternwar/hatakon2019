@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { FormControl, Select, InputLabel } from "@material-ui/core";
 
 class StyledSelect extends Component {
   handleChange = event => {
@@ -11,14 +10,16 @@ class StyledSelect extends Component {
   };
 
   render() {
-    const { label, children, value } = this.props;
+    const { label, options, value } = this.props;
     return (
-      <FormControl className={`s`}>
-        {label && <InputLabel className={"s"}>{label}</InputLabel>}
-        <Select value={value} onChange={this.handleChange} className={"sds"}>
-          {children}
-        </Select>
-      </FormControl>
+      <div className={`s`}>
+        <span>{label}</span>
+        <select value={value}>
+          {options.map(item => (
+            <option>{item}</option>
+          ))}
+        </select>
+      </div>
     );
   }
 }

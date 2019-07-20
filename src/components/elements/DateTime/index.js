@@ -1,5 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
+import DateTimePicker from "react-datetime-picker";
 
-const DateTime = ({ header, onApply, onReject, text }) => <dev />;
+class DateTime extends Component {
+  handleChange = date => {
+    const { value, onChange } = this.props;
+    onChange(date);
+  };
+
+  render() {
+    const { label, value } = this.props;
+    return (
+      <div>
+        <span>{label}</span>
+        <div>
+          <DateTimePicker onChange={this.handleChange} value={value} />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default DateTime;

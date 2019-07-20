@@ -1,9 +1,10 @@
-import * as types from "./types";
+import * as modalTypes from "../../components/connectedComponents/CreateUser/types";
+import * as panelTypes from "../../components/connectedComponents/TopPanel/types";
 
 const initState = {
   employees: [],
   modal: {
-    name: "NAME",
+    name: "",
     lastName: "",
     midleName: "",
     bithdayDate: "",
@@ -14,21 +15,28 @@ const initState = {
     passDate: "",
     isCreate: true
   },
-  isModalOpened: false
+  isModalOpened: false,
+  panel: 1
 };
 
 export default function mainLayoutReducer(state = initState, actions) {
   switch (actions.type) {
-    case types.CREATE: {
+    case modalTypes.CREATE: {
       return state;
     }
-    case types.SET_MODAL_FIELD: {
+    case modalTypes.SET_MODAL_FIELD: {
       return {
         ...state,
         modal: {
           ...state.modal,
           [actions.key]: actions.value
         }
+      };
+    }
+    case panelTypes.SET_TAB: {
+      return {
+        ...state,
+        panel: actions.value
       };
     }
     default:

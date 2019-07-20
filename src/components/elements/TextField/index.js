@@ -1,25 +1,22 @@
 import React, { Component } from "react";
-import { TextField } from "@material-ui/core";
+import "./styles.css";
 
 class StyledTextField extends Component {
   handleChange = event => {
     const { onChange } = this.props;
 
     if (onChange) {
-      onChange(event.value);
+      onChange(event.target.value);
     }
   };
 
   render() {
     const { value, label, onKeyPress } = this.props;
     return (
-      <TextField
-        value={value}
-        onChange={this.handleChange}
-        label={label}
-        className={""}
-        onKeyPress={onKeyPress}
-      />
+      <div className="form-item">
+        <label>{label}</label>
+        <input value={value} onChange={this.handleChange} />
+      </div>
     );
   }
 }
