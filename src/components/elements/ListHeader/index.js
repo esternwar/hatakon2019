@@ -11,3 +11,5 @@ const ListHeader = () => (
     <div>Время изменения статуса</div>
   </div>
 );
+
+export default ListHeader;

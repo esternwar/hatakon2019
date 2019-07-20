@@ -5,7 +5,7 @@ class StyledCheckbox extends PureComponent {
     let { onChange, checked } = this.props;
 
     if (onChange) {
-      onChange(!checked, event.ctrlKey);
+      onChange(!checked);
     }
   };
 

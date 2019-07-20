@@ -8,6 +8,7 @@
     "react": "^16.8.6",
     "react-datetime-picker": "^2.6.0",
     "react-dom": "^16.8.6",
+    "react-list": "^0.8.11",
     "react-list-lazy-load": "^1.1.1",
     "react-redux": "^7.1.0",
     "react-scripts": "0.9.5",
